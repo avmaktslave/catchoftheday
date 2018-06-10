@@ -25,8 +25,11 @@ class App extends Component {
   };
 
   addToOrder = key => {
+    // Take a copy of existing state
     const order = { ...this.state.order };
+    // Either add to the order , or update the number in our order
     order[key] = order[key] + 1 || 1;
+    // Call setState to update our state object
     this.setState({ order });
   };
 
